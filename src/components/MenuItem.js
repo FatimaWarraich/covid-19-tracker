@@ -25,11 +25,7 @@ export default function Menu_Item() {
 
     getCountriesData();
   }, []);
-     /*const onCountryChange = async (e) => {
-     const countryCode = e.target.value;
-     console.log("country code",countryCode)
-     setInputCountry(countryCode);
-     }*/
+     
      const onCountryChange = async (e) => {
         const countryCode = e.target.value;
     

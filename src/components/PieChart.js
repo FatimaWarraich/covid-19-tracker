@@ -3,6 +3,31 @@ import { Pie } from 'react-chartjs-2';
 
 
 function PieChart(props) {
+
+    const data = {
+        labels: [
+            'Total Cases',                                    
+            'Total Deaths',
+            'Total Recovered',
+            'Serious Cases'
+        ],
+        datasets: [{
+            data: [countryInfo.cases,countryInfo.recovered,countryInfo.deaths],
+            backgroundColor: [
+                '#799cff',                
+                '#ec8b37',
+                '#4dbb6f',
+                '#cc4646'
+            ],
+            hoverBackgroundColor: [
+                '#799cff',                
+                '#ec8b37',
+                '#4dbb6f',
+                '#cc4646'
+            ]
+        }]
+    };
+
     const [countryInfo, setCountryInfo] = useState({});
 
     const onCountryChange = async (e) => {
@@ -22,32 +47,7 @@ function PieChart(props) {
           });
       };
 
-    
-
-    const data = {
-        labels: [
-            'Total Cases',                                    
-            'Total Deaths',
-            'Total Recovered',
-            'Serious Cases'
-        ],
-        datasets: [{
-            data: [props.title,props.total_recovered,props.total_deaths,props.total_active_cases],
-            backgroundColor: [
-                '#799cff',                
-                '#ec8b37',
-                '#4dbb6f',
-                '#cc4646'
-            ],
-            hoverBackgroundColor: [
-                '#799cff',                
-                '#ec8b37',
-                '#4dbb6f',
-                '#cc4646'
-            ]
-        }]
-    };
-
+       
     return (
         <div>
             <h2>Pie Visuals</h2>
